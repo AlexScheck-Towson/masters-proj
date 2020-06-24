@@ -422,6 +422,11 @@
       <pre *ngSwitchCase="'build'">ng build --prod</pre>
   </div>
 
+  <input type="text" [(ngModel)]="name" />
+{{name}}
+  
+  <button (click)="buttonPressed()">Press This Button</button>
+
   <!-- Links -->
   <div class="card-container">
     <a class="circle-link" title="Animations" href="https://angular.io/guide/animations" target="_blank" rel="noopener">
