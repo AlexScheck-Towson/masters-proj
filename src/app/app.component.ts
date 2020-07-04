@@ -10,7 +10,7 @@ import { Topic } from './models/topic.model';
 export class AppComponent {
   title = 'scheck-app-ui';
 
-  public name:string = 'Alex';
+  public passNum:number = 1;
 
 
   constructor(private http: HttpClient) {
@@ -18,7 +18,7 @@ export class AppComponent {
   }
 
   buttonPressed() {
-    this.http.post<Topic[]>('http://127.0.0.1:5002/',{name: this.name}).subscribe(data => {
+    this.http.post<Topic[]>('http://127.0.0.1:5002/topics',{passNum: this.passNum}).subscribe(data => {
       console.log(data);
     });
     // alert(this.name);
