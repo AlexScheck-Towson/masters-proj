@@ -3,7 +3,7 @@
 @include mat-core();
 
 $scheck-app-primary: mat-palette($mat-blue, 900);
-$scheck-app-accent: mat-palette($mat-deep-orange, 600);
+$scheck-app-accent: mat-palette($mat-blue, 500);
 
 $scheck-app-theme: mat-light-theme($scheck-app-primary, $scheck-app-accent);
 

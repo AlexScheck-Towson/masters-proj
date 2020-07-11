@@ -1,0 +1,24 @@
+.toolbar-icon {
+    vertical-align: text-bottom;
+    margin-right: 2px;
+}
+
+.app-title {
+    background-color: #2196f3;
+    margin-right: 14px;
+    padding: 16px 8px;
+    border-radius: 15px;
+    vertical-align: middle;
+    
+}
+
+.toolbar-menu-item {
+    cursor: pointer;
+    padding: 16px 14px 16px 0;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.toolbar-menu-item:hover {
+    background-color: #1358bf;
+}
