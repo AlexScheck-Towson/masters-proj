@@ -8,7 +8,7 @@ export class MainService {
   constructor() { }
 
   private flashURL:string = 'http://127.0.0.1:5002/';
-  private passes:number[] = [1,2,3]
+  public passes:number[] = [1,2,3]
 
   populatePasses(passes:number[]) {
     this.passes = passes;

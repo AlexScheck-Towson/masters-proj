@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { Topic } from './models/topic.model';
 import { LearningObject } from './models/learningObject.model';
+import { MainService } from './services/main.service';
 
 @Component({
   selector: 'app-root',
@@ -13,9 +14,10 @@ export class AppComponent {
 
   public passNum:number = 1;
   public topicNum:number = 4;
+  public james:number[] = [1, 2, 3];
 
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, public mainService: MainService) {
     
   }
 

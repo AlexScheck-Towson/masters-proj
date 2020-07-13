@@ -12,13 +12,7 @@
     
 }
 
-.toolbar-menu-item {
-    cursor: pointer;
-    padding: 16px 14px 16px 0;
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
-}
 
-.toolbar-menu-item:hover {
+.toolbar-button:hover {
     background-color: #1358bf;
 }
