@@ -11,11 +11,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MainService } from './services/main.service';
+import { HomeComponent } from './component/home/home.component';
+import { PassComponent } from './component/pass/pass.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeComponent,
+    PassComponent
   ],
   imports: [
     BrowserModule,
