@@ -12,8 +12,8 @@ import { MainService } from './services/main.service';
 export class AppComponent {
   title = 'scheck-app-ui';
 
-  public passNum:number = 1;
-  public topicNum:number = 4;
+  // public passNum:number = 1;
+  // public topicNum:number = 4;
   public james:number[] = [1, 2, 3];
 
 
@@ -21,18 +21,18 @@ export class AppComponent {
     
   }
 
-  getTopicsButtonPressed() {
-    this.http.post<Topic[]>('http://127.0.0.1:5002/topics',{passNum: this.passNum}).subscribe(data => {
-      console.log(data);
-    });
-    // alert(this.name);
-  }
+  // getTopicsButtonPressed() {
+  //   this.http.post<Topic[]>('http://127.0.0.1:5002/topics',{passNum: this.passNum}).subscribe(data => {
+  //     console.log(data);
+  //   });
+  //   // alert(this.name);
+  // }
 
-  getLearningObjectsButtonPressed() {
-    this.http.post<LearningObject[]>('http://127.0.0.1:5002/learning-objects',{passNum: this.passNum, topicNum: this.topicNum}).subscribe(data => {
-      console.log(data);
-    });
-  }
+  // getLearningObjectsButtonPressed() {
+  //   this.http.post<LearningObject[]>('http://127.0.0.1:5002/learning-objects',{passNum: this.passNum, topicNum: this.topicNum}).subscribe(data => {
+  //     console.log(data);
+  //   });
+  // }
 }
 
 

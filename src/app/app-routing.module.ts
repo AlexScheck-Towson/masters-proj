@@ -5,7 +5,7 @@ import { PassComponent } from './component/pass/pass.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
-  { path: 'pass', component: PassComponent },
+  { path: 'pass/:passNum', component: PassComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' }
 ];
 
