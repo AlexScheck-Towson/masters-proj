@@ -14,8 +14,6 @@ export class AppComponent {
 
   // public passNum:number = 1;
   // public topicNum:number = 4;
-  public james:number[] = [1, 2, 3];
-
 
   constructor(private http: HttpClient, public mainService: MainService) {
     
