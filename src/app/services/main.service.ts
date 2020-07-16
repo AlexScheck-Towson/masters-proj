@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class MainService {
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   private flashURL:string = 'http://127.0.0.1:5002/';
   public passes:number[] = [1,2,3]
@@ -16,6 +17,16 @@ export class MainService {
   private lastRunNumPasses = this.defaultNumPasses;
   private lastRunAlpha = this.defaultAlpha;
   private lastRunStopWords = this.defaultStopWords;
+
+  private getUrl(path:string) {
+    return 'http://127.0.0.1:5002/' + path;
+  }
+
+  loadPasses() {
+    this.http.get<number[]>(this.getUrl('passNums')).subscribe(data =>{
+      this.passes = data;
+    });
+  }
 
   populatePasses(passes:number[]) {
     this.passes = passes;

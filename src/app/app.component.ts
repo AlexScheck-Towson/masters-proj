@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Topic } from './models/topic.model';
 import { LearningObject } from './models/learningObject.model';
 import { MainService } from './services/main.service';
@@ -9,14 +9,17 @@ import { MainService } from './services/main.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
   title = 'scheck-app-ui';
 
   // public passNum:number = 1;
   // public topicNum:number = 4;
 
-  constructor(private http: HttpClient, public mainService: MainService) {
+  constructor(public mainService: MainService) {
     
+  }
+  ngOnInit(): void {
+    this.mainService.loadPasses();
   }
 
   // getTopicsButtonPressed() {
