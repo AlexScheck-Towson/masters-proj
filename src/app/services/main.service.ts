@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { Topic } from '../models/topic.model';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +11,7 @@ export class MainService {
   constructor(private http: HttpClient) { }
 
   private flashURL:string = 'http://127.0.0.1:5002/';
-  public passes:number[] = [1,2,3]
+  public passes:number[] = []
 
   private defaultNumPasses = 13;
   private defaultAlpha = 30;
@@ -26,6 +28,10 @@ export class MainService {
     this.http.get<number[]>(this.getUrl('passNums')).subscribe(data =>{
       this.passes = data;
     });
+  }
+
+  getTopicsForPass(passNum:number):Observable<Topic[]> {
+    return this.http.post<Topic[]>(this.getUrl('topics'), {passNum: passNum});
   }
 
   populatePasses(passes:number[]) {
