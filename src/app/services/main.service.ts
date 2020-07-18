@@ -34,6 +34,10 @@ export class MainService {
     return this.http.post<Topic[]>(this.getUrl('topics'), {passNum: passNum});
   }
 
+  clearAllPasses():Observable<boolean> {
+    return this.http.get<boolean>(this.getUrl('clearPasses'));
+  }
+
   populatePasses(passes:number[]) {
     this.passes = passes;
   }

@@ -9,7 +9,7 @@
       <mat-icon color="accent">keyboard_arrow_right</mat-icon>Pass {{passNum}}
     </button>
     <hr/>
-    <button mat-menu-item><mat-icon color="accent">delete</mat-icon>Clear All Passes</button>
+    <button mat-menu-item (click)="clearAllPasses()"><mat-icon color="accent">delete</mat-icon>Clear All Passes</button>
   </mat-menu>
 </mat-toolbar>
 <router-outlet></router-outlet>

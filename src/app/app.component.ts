@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Topic } from './models/topic.model';
 import { LearningObject } from './models/learningObject.model';
 import { MainService } from './services/main.service';
@@ -15,11 +16,22 @@ export class AppComponent implements OnInit{
   // public passNum:number = 1;
   // public topicNum:number = 4;
 
-  constructor(public mainService: MainService) {
+  constructor(public mainService: MainService, private router: Router) {
     
   }
   ngOnInit(): void {
     this.mainService.loadPasses();
+  }
+
+  clearAllPasses(): void {
+    this.mainService.clearAllPasses().subscribe(data => {
+      if(data) {
+        this.mainService.populatePasses([]);
+        this.router.navigate(['/home']);
+      } else {
+        alert('Clearing passes failed');
+      }
+    });
   }
 
   // getTopicsButtonPressed() {
