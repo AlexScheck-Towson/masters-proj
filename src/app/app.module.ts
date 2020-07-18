@@ -15,13 +15,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MainService } from './services/main.service';
 import { HomeComponent } from './component/home/home.component';
 import { PassComponent } from './component/pass/pass.component';
+import { LearningObjComponent } from './learning-obj/learning-obj.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    PassComponent
+    PassComponent,
+    LearningObjComponent
   ],
   imports: [
     BrowserModule,

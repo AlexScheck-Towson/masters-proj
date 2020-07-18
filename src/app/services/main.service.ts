@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Topic } from '../models/topic.model';
+import { LearningObject } from '../models/learningObject.model';
 
 @Injectable({
   providedIn: 'root'
@@ -32,6 +33,10 @@ export class MainService {
 
   getTopicsForPass(passNum:number):Observable<Topic[]> {
     return this.http.post<Topic[]>(this.getUrl('topics'), {passNum: passNum});
+  }
+
+  getLearningObjectsForPassAndTopic(passNum: number, topicNum:number):Observable<LearningObject[]> {
+    return this.http.post<LearningObject[]>(this.getUrl('learning-objects'), {passNum: passNum, topicNum: topicNum});
   }
 
   clearAllPasses():Observable<boolean> {

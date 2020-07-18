@@ -1,4 +1,4 @@
 <div>
-    <p>pass works! {{passNum}}</p>
-        <li *ngFor="let t of topics">{{t.key_words}}</li>
+    <button *ngFor="let t of topics" (click)="selectTopic(t)">{{t.key_words}}</button>
+    <app-learning-obj *ngIf="selectedTopic !== null" [passNum]="passNum" [topic]="selectedTopic" ></app-learning-obj>
 </div>

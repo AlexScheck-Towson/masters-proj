@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Topic } from './../../models/topic.model';
 import { MainService } from './../../services/main.service';
+import { LearningObject } from 'src/app/models/learningObject.model';
 
 @Component({
   selector: 'app-pass',
@@ -12,6 +13,8 @@ export class PassComponent implements OnInit {
 
   passNum:number;
   topics:Topic[];
+  selectedTopic:Topic = null;
+  learningObjects:LearningObject[]
 
   constructor(private activatedRoute: ActivatedRoute, private mainService: MainService) {}
 
@@ -23,6 +26,10 @@ export class PassComponent implements OnInit {
         console.log(data);
       });
     });
+  }
+
+  selectTopic(t:Topic) {
+    this.selectedTopic = t;
   }
 
 }
