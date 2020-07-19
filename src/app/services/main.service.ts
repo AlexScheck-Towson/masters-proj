@@ -14,10 +14,10 @@ export class MainService {
   private flashURL:string = 'http://127.0.0.1:5002/';
   public passes:number[] = []
 
-  private defaultNumPasses = 13;
+  private defaultNumTopics = 13;
   private defaultAlpha = 30;
   private defaultStopWords = "module, student, james";
-  private lastRunNumPasses = this.defaultNumPasses;
+  private lastRunNumTopics = this.defaultNumTopics;
   private lastRunAlpha = this.defaultAlpha;
   private lastRunStopWords = this.defaultStopWords;
 
@@ -43,6 +43,13 @@ export class MainService {
     return this.http.get<boolean>(this.getUrl('clearPasses'));
   }
 
+  executeTopicModeling(numTopics:number, alpha:number, stopWords:string[], stopWordsString:string):Observable<number> {
+    this.lastRunNumTopics = numTopics;
+    this.lastRunAlpha = alpha;
+    this.lastRunStopWords = stopWordsString;
+    return this.http.post<number>(this.getUrl('execute'), {numTopics: numTopics, alpha: alpha, stopWords: stopWords});
+  }
+
   populatePasses(passes:number[]) {
     this.passes = passes;
   }
@@ -51,8 +58,8 @@ export class MainService {
     this.passes.push(pass);
   }
 
-  public getDefaultNumPasses() {
-    return this.defaultNumPasses;
+  public getDefaultNumTopics() {
+    return this.defaultNumTopics;
   }
 
   public getDefaultAlpha() {
@@ -63,28 +70,16 @@ export class MainService {
     return this.defaultStopWords;
   }
 
-  public getLastRunNumPasses() {
-    return this.lastRunNumPasses;
-  }
-
-  public setLastRunNumPasses(lastRunNumPasses:number) {
-    this.lastRunNumPasses = lastRunNumPasses;
+  public getLastRunNumTopics() {
+    return this.lastRunNumTopics;
   }
 
   public getLastRunAlpha() {
     return this.lastRunAlpha;
   }
 
-  public setLastRunAlpha(lastRunAlpha:number) {
-    this.lastRunAlpha = lastRunAlpha;
-  }
-
   public getLastRunStopWords() {
     return this.lastRunStopWords;
-  }
-
-  public setLastRunStopWords(lastRunStopWords:string) {
-    this.lastRunStopWords = lastRunStopWords;
   }
 }
  

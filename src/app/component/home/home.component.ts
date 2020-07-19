@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MainService } from '../../services/main.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -8,34 +9,34 @@ import { MainService } from '../../services/main.service';
 })
 export class HomeComponent implements OnInit {
 
-  numOfPasses:number;
+  numTopics:number;
   alpha:number;
   stopWords:string;
 
-  constructor(public mainService: MainService) { }
+  constructor(public mainService: MainService, private router: Router) { }
 
   ngOnInit(): void {
     this.resetAllToLastRun();
   }
 
   public resetAllToDefault() {
-    this.numOfPasses = this.mainService.getDefaultNumPasses();
+    this.numTopics = this.mainService.getDefaultNumTopics();
     this.alpha = this.mainService.getDefaultAlpha();
     this.stopWords = this.mainService.getDefaultStopWords();
   }
 
   public resetAllToLastRun() {
-    this.numOfPasses = this.mainService.getLastRunNumPasses();
+    this.numTopics = this.mainService.getLastRunNumTopics();
     this.alpha = this.mainService.getLastRunAlpha();
     this.stopWords = this.mainService.getLastRunStopWords();
   }
 
-  public resetNumPassesToDefault() {
-    this.numOfPasses = this.mainService.getDefaultNumPasses();
+  public resetNumTopicsToDefault() {
+    this.numTopics = this.mainService.getDefaultNumTopics();
   }
 
-  public resetNumPassesToLastRun() {
-    this.numOfPasses = this.mainService.getLastRunNumPasses();
+  public resetNumTopicsToLastRun() {
+    this.numTopics = this.mainService.getLastRunNumTopics();
   }
 
   public resetAlphaToDefault() {
@@ -52,6 +53,35 @@ export class HomeComponent implements OnInit {
 
   public resetStopWordsToLastRun() {
     this.stopWords = this.mainService.getLastRunStopWords();
+  }
+
+  execute():void {
+    let rawList = this.stopWords.split(',');
+    let swList = [];
+    let issueWords = '';
+    for (let w of rawList) {
+      let s = w.trim();
+      if(s.length === 0) {
+        continue;
+      }
+      if (/\s/g.test(s)) {
+        if (issueWords.length === 0) {
+          issueWords = s;
+        } else {
+          issueWords = issueWords + ', ' + s;
+        }
+      } else {
+        swList.push(s);
+      }
+    }
+    if (issueWords.length > 0) {
+      alert("Stop words cannot have spaces: " + issueWords);
+    } else {
+      this.mainService.executeTopicModeling(this.numTopics, this.alpha, swList, this.stopWords).subscribe(data => {
+        this.mainService.addPass(data);
+        this.router.navigate(['/pass/' + data])
+      });
+    }
   }
 
 }
