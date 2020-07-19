@@ -1,0 +1,23 @@
+mat-grid-tile  {
+    background-color: #666767;
+    color: white;
+    border-radius: 10px;
+    margin-top: 5px;
+}
+
+mat-grid-tile:hover {
+    cursor: pointer;
+    background-color: #a5a3a3;
+    color: black;
+    font-weight: 600;
+}
+
+mat-grid-tile.selected {
+    background-color: #a5a3a3;
+    color: black;
+    font-weight: 600;
+}
+
+mat-grid-tile figure {
+    padding: 0 10px;
+}

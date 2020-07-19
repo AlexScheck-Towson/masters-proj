@@ -8,6 +8,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatInputModule } from '@angular/material/input';
+import { MatGridListModule } from '@angular/material/grid-list';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -36,7 +37,8 @@ import { LearningObjComponent } from './learning-obj/learning-obj.component';
     MatButtonModule,
     MatMenuModule,
     MatSliderModule,
-    MatInputModule
+    MatInputModule,
+    MatGridListModule
   ],
   providers: [MainService],
   bootstrap: [AppComponent]

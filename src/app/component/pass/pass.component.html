@@ -1,4 +1,11 @@
 <div>
-    <button *ngFor="let t of topics" (click)="selectTopic(t)">{{t.key_words}}</button>
+    <div class="page-title">
+        Pass {{passNum}}
+    </div>
+    <h2>Topics:</h2>
+    <mat-grid-list cols="4" rowHeight="50px">
+        <mat-grid-tile *ngFor="let t of topics" (click)="selectTopic(t)" 
+        [ngClass]="(t === selectedTopic) ? 'selected' : ''">{{t.key_words}}</mat-grid-tile>
+    </mat-grid-list>
     <app-learning-obj *ngIf="selectedTopic !== null" [passNum]="passNum" [topic]="selectedTopic" ></app-learning-obj>
 </div>

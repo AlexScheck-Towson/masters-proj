@@ -16,3 +16,10 @@
 .toolbar-button:hover {
     background-color: #1358bf;
 }
+
+.main-container {
+    margin: auto;
+    width: 80%;
+    background-color: white;
+    min-height: 850px;
+}
