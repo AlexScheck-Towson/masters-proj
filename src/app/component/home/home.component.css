@@ -1,13 +1,21 @@
+.left-side {
+    width: 40%;
+}
 
+.right-side {
+    border-left: 2px solid #a5a3a3;
+}
 .section-title {
     font-size: 22px;
     font-style: italic;
 }
 
-.slider-sec {
-    width: 50%;
-    padding: 0 0 20px 20px;
-    border-bottom: 2px solid #a5a3a3;
+.section-padding {
+    padding: 20px 0 20px 20px;
+}
+
+.topics-cell, .stop-words-cell {
+    border-bottom: 2px solid #a5a3a3
 }
 
 mat-slider {
@@ -21,4 +29,19 @@ mat-slider {
 
 .default-button {
     margin: 0 10px;
+}
+
+.stop-words-input {
+    min-width: 482px;
+    min-height: 152px;
+    margin-top: 10px;
+}
+
+.reset-all-cell, .execute-cell {
+    width: 50%;
+}
+
+.execute-cell {
+    border-left: 2px solid #a5a3a3;
+    padding-left: 20px;
 }
