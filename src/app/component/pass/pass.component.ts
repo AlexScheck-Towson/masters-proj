@@ -14,7 +14,7 @@ export class PassComponent implements OnInit {
   passNum:number;
   topics:Topic[];
   selectedTopic:Topic = null;
-  learningObjects:LearningObject[]
+  learningObjects:LearningObject[];
 
   constructor(private activatedRoute: ActivatedRoute, private mainService: MainService) {}
 
@@ -29,7 +29,11 @@ export class PassComponent implements OnInit {
   }
 
   selectTopic(t:Topic) {
-    this.selectedTopic = t;
+    if ((this.selectedTopic === null) || (this.selectedTopic.number !== t.number)) {
+      this.selectedTopic = t;
+    } else {
+      this.selectedTopic = null;
+    }
   }
 
 }
