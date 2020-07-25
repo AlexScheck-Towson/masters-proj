@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Topic } from '../models/topic.model';
-import { MainService } from '../services/main.service';
-import { LearningObject } from '../models/learningObject.model';
+import { Topic } from '../../models/topic.model';
+import { MainService } from '../../services/main.service';
+import { LearningObject } from '../../models/learningObject.model';
 
 @Component({
   selector: 'app-learning-obj',

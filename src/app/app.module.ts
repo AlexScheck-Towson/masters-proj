@@ -9,6 +9,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatInputModule } from '@angular/material/input';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { MatDialogModule } from '@angular/material/dialog';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,7 +17,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MainService } from './services/main.service';
 import { HomeComponent } from './component/home/home.component';
 import { PassComponent } from './component/pass/pass.component';
-import { LearningObjComponent } from './learning-obj/learning-obj.component';
+import { LearningObjComponent } from './component/learning-obj/learning-obj.component';
 
 
 @NgModule({
@@ -38,7 +39,8 @@ import { LearningObjComponent } from './learning-obj/learning-obj.component';
     MatMenuModule,
     MatSliderModule,
     MatInputModule,
-    MatGridListModule
+    MatGridListModule,
+    MatDialogModule
   ],
   providers: [MainService],
   bootstrap: [AppComponent]
