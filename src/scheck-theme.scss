@@ -7,4 +7,12 @@ $scheck-app-accent: mat-palette($mat-blue, 500);
 
 $scheck-app-theme: mat-light-theme($scheck-app-primary, $scheck-app-accent);
 
+.primary-color {
+    color: mat-color($scheck-app-primary) !important;
+}
+
+.accent-color {
+    color: mat-color($scheck-app-accent) !important;
+}
+
 @include angular-material-theme($scheck-app-theme);

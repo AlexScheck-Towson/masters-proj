@@ -15,3 +15,16 @@ body {
     border-bottom: 1px solid black;
     margin-bottom: 15px;
 }
+
+.table {
+    display: table;
+    width: 100%;
+}
+
+.row {
+    display: table-row;
+}
+
+.cell {
+    display: table-cell;
+}

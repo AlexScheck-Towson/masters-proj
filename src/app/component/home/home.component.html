@@ -2,31 +2,43 @@
     <div class="page-title">
         Home - Run script
     </div>
-    <div>
-        <label>Number of passes:</label>
-        <mat-slider thumbLabel min="2" max="25" [(ngModel)]="numTopics"></mat-slider>
-        {{numTopics}}
-        <button mat-raised-button color="primary" (click)="resetNumTopicsToDefault()">Reset # Passes to Default Value</button>
-        <button mat-raised-button color="accent" (click)="resetNumTopicsToLastRun()">Reset # Passes to Last Run Value</button>
-    </div>
-    <div>
-        <label>Alpha:</label>
-        <mat-slider thumbLabel min="10" max="100" step="5" [(ngModel)]="alpha"></mat-slider>
-        {{alpha}}
-        <button mat-raised-button color="primary" (click)="resetAlphaToDefault()">Reset Alpha to Default Value</button>
-        <button mat-raised-button color="accent" (click)="resetAlphaToLastRun()">Reset Alpha to Last Run Value</button>
-    </div>
-    <div>
-        <label>Stop words:</label>
-        <textarea matInput placeholder="comma, delimited, list, of, words" [(ngModel)]="stopWords"></textarea>
-        <button mat-raised-button color="primary" (click)="resetStopWordsToDefault()">Reset Stop Words to Default Value</button>
-        <button mat-raised-button color="accent" (click)="resetStopWordsToLastRun()">Reset Stop Words to Last Run Value</button>
-    </div>
-    <div>
-        <button mat-raised-button color="primary" (click)="resetAllToDefault()">Reset All to Default Values</button>
-        <button mat-raised-button color="accent" (click)="resetAllToLastRun()">Reset All to Last Run Values</button>
-    </div>
-    <div>
-        <button mat-raised-button color="primary" (click)="execute()">Run</button>
+    <div class="table">
+        <div class="row">
+            <div class="cell slider-sec" style="border-right: 2px solid #a5a3a3">
+                <label class="section-title">Number of topics:</label>
+                <br>
+                <mat-slider thumbLabel min="2" max="25" [(ngModel)]="numTopics"></mat-slider>
+                <span class="primary-color slide-val">{{numTopics}}</span>
+                <br>
+                <label>Reset to:</label>
+                <button mat-raised-button color="accent" class="default-button" (click)="resetNumTopicsToDefault()">Default</button>
+                <button mat-raised-button color="accent" (click)="resetNumTopicsToLastRun()">Last Run</button>
+            </div>
+            <div class="cell slider-sec">
+                <label class="section-title">Alpha:</label>
+                <br>
+                <mat-slider thumbLabel min="10" max="100" step="5" [(ngModel)]="alpha"></mat-slider>
+                <span class="primary-color slide-val">{{alpha}}</span>
+                <br>
+                <label>Reset to:</label>
+                <button mat-raised-button color="accent" class="default-button" (click)="resetAlphaToDefault()">Default</button>
+                <button mat-raised-button color="accent" (click)="resetAlphaToLastRun()">Last Run</button>
+            </div>
+        </div>
+        <div>
+            <label class="section-title">Stop words:</label>
+            <textarea matInput placeholder="comma, delimited, list, of, words" [(ngModel)]="stopWords"></textarea>
+            <button mat-raised-button color="primary" (click)="resetStopWordsToDefault()">Reset Stop Words to Default
+                Value</button>
+            <button mat-raised-button color="accent" (click)="resetStopWordsToLastRun()">Reset Stop Words to Last Run
+                Value</button>
+        </div>
+        <div>
+            <button mat-raised-button color="primary" (click)="resetAllToDefault()">Reset All to Default Values</button>
+            <button mat-raised-button color="accent" (click)="resetAllToLastRun()">Reset All to Last Run Values</button>
+        </div>
+        <div>
+            <button mat-raised-button color="primary" (click)="execute()">Run</button>
+        </div>
     </div>
 </div>
