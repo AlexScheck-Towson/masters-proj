@@ -10,6 +10,7 @@ import { MatSliderModule } from '@angular/material/slider';
 import { MatInputModule } from '@angular/material/input';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -18,6 +19,7 @@ import { MainService } from './services/main.service';
 import { HomeComponent } from './component/home/home.component';
 import { PassComponent } from './component/pass/pass.component';
 import { LearningObjComponent } from './component/learning-obj/learning-obj.component';
+import { ExecutingScriptDialogComponent } from './component/executing-script-dialog/executing-script-dialog.component';
 
 
 @NgModule({
@@ -25,7 +27,8 @@ import { LearningObjComponent } from './component/learning-obj/learning-obj.comp
     AppComponent,
     HomeComponent,
     PassComponent,
-    LearningObjComponent
+    LearningObjComponent,
+    ExecutingScriptDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +43,8 @@ import { LearningObjComponent } from './component/learning-obj/learning-obj.comp
     MatSliderModule,
     MatInputModule,
     MatGridListModule,
-    MatDialogModule
+    MatDialogModule,
+    MatProgressSpinnerModule
   ],
   providers: [MainService],
   bootstrap: [AppComponent]

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MainService } from '../../services/main.service';
 import { Router } from '@angular/router';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { ExecutingScriptDialogComponent } from '../executing-script-dialog/executing-script-dialog.component';
 
 @Component({
   selector: 'app-home',
@@ -14,7 +15,7 @@ export class HomeComponent implements OnInit {
   alpha:number;
   stopWords:string;
 
-  constructor(public mainService: MainService, private router: Router) { }
+  constructor(public mainService: MainService, private router: Router, private dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.resetAllToLastRun();
@@ -78,8 +79,10 @@ export class HomeComponent implements OnInit {
     if (issueWords.length > 0) {
       alert("Stop words cannot have spaces: " + issueWords);
     } else {
+      const dialogRef = this.dialog.open(ExecutingScriptDialogComponent);
       this.mainService.executeTopicModeling(this.numTopics, this.alpha, swList, this.stopWords).subscribe(data => {
         this.mainService.addPass(data);
+        dialogRef.close();
         this.router.navigate(['/pass/' + data])
       });
     }

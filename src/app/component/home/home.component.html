@@ -7,14 +7,15 @@
             <div class="cell left-side">
                 <div class="table">
                     <div class="row">
-                        <div class="cell section-padding topics-cell" >
+                        <div class="cell section-padding topics-cell">
                             <label class="section-title">Number of topics:</label>
                             <br>
                             <mat-slider thumbLabel min="2" max="25" [(ngModel)]="numTopics"></mat-slider>
                             <span class="primary-color slide-val">{{numTopics}}</span>
                             <br>
-                            <label>Reset to:</label>
-                            <button mat-raised-button color="accent" class="default-button" (click)="resetNumTopicsToDefault()">
+                            <label class="reset-label">Reset to:</label>
+                            <button mat-raised-button color="accent" class="default-button"
+                                (click)="resetNumTopicsToDefault()">
                                 <mat-icon>settings_backup_restore</mat-icon> Default
                             </button>
                             <button mat-raised-button color="accent" (click)="resetNumTopicsToLastRun()">
@@ -29,8 +30,9 @@
                             <mat-slider thumbLabel min="10" max="100" step="5" [(ngModel)]="alpha"></mat-slider>
                             <span class="primary-color slide-val">{{alpha}}</span>
                             <br>
-                            <label>Reset to:</label>
-                            <button mat-raised-button color="accent" class="default-button" (click)="resetAlphaToDefault()">
+                            <label class="reset-label">Reset to:</label>
+                            <button mat-raised-button color="accent" class="default-button"
+                                (click)="resetAlphaToDefault()">
                                 <mat-icon>settings_backup_restore</mat-icon> Default
                             </button>
                             <button mat-raised-button color="accent" (click)="resetAlphaToLastRun()">
@@ -46,10 +48,12 @@
                         <div class="cell section-padding stop-words-cell">
                             <label class="section-title">Stop words:</label>
                             <br>
-                            <textarea class="stop-words-input" matInput placeholder="comma, delimited, list, of, words" [(ngModel)]="stopWords"></textarea>
+                            <textarea class="stop-words-input" matInput placeholder="comma, delimited, list, of, words"
+                                [(ngModel)]="stopWords"></textarea>
                             <div style="padding-left: 15%">
-                                <label>Reset to:</label>
-                                <button mat-raised-button color="accent" class="default-button" (click)="resetStopWordsToDefault()">
+                                <label class="reset-label">Reset to:</label>
+                                <button mat-raised-button color="accent" class="default-button"
+                                    (click)="resetStopWordsToDefault()">
                                     <mat-icon>settings_backup_restore</mat-icon> Default
                                 </button>
                                 <button mat-raised-button color="accent" (click)="resetStopWordsToLastRun()">
@@ -63,8 +67,11 @@
                             <div class="table">
                                 <div class="row">
                                     <div class="cell reset-all-cell">
-                                        <label>Reset <span style="font-weight: bold;">All</span> to:</label>
-                                        <button mat-raised-button color="accent" class="default-button" (click)="resetAllToDefault()">
+                                        <label class="reset-label">Reset <span
+                                                style="font-weight: bold; font-style: italic;"
+                                                class="primary-color">All</span> to:</label>
+                                        <button mat-raised-button color="accent" class="default-button"
+                                            (click)="resetAllToDefault()">
                                             <mat-icon>settings_backup_restore</mat-icon> Default
                                         </button>
                                         <button mat-raised-button color="accent" (click)="resetAllToLastRun()">
@@ -72,7 +79,8 @@
                                         </button>
                                     </div>
                                     <div class="cell execute-cell">
-                                        <button mat-raised-button color="primary" class="default-button" (click)="execute()">
+                                        <button mat-raised-button color="primary" class="default-button"
+                                            (click)="execute()">
                                             Execute Script<mat-icon>keyboard_arrow_right</mat-icon>
                                         </button>
                                     </div>
