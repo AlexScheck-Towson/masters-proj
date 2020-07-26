@@ -8,7 +8,7 @@
                 <div class="table">
                     <div class="row">
                         <div class="cell section-padding topics-cell">
-                            <label class="section-title">Number of topics:</label>
+                            <label class="section-title primary-color">Number of topics:</label>
                             <br>
                             <mat-slider thumbLabel min="2" max="25" [(ngModel)]="numTopics"></mat-slider>
                             <span class="primary-color slide-val">{{numTopics}}</span>
@@ -25,7 +25,7 @@
                     </div>
                     <div class="row">
                         <div class="cell section-padding">
-                            <label class="section-title">Alpha:</label>
+                            <label class="section-title primary-color">Alpha:</label>
                             <br>
                             <mat-slider thumbLabel min="10" max="100" step="5" [(ngModel)]="alpha"></mat-slider>
                             <span class="primary-color slide-val">{{alpha}}</span>
@@ -46,11 +46,11 @@
                 <div class="table">
                     <div class="row">
                         <div class="cell section-padding stop-words-cell">
-                            <label class="section-title">Stop words:</label>
+                            <label class="section-title primary-color">Stop words:</label>
                             <br>
                             <textarea class="stop-words-input" matInput placeholder="comma, delimited, list, of, words"
                                 [(ngModel)]="stopWords"></textarea>
-                            <div style="padding-left: 15%">
+                            <div class="stop-words-reset-well">
                                 <label class="reset-label">Reset to:</label>
                                 <button mat-raised-button color="accent" class="default-button"
                                     (click)="resetStopWordsToDefault()">
