@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Topic } from '../../models/topic.model';
 import { MainService } from '../../services/main.service';
 import { LearningObject } from '../../models/learningObject.model';
+import {MatTableDataSource} from '@angular/material/table';
 
 @Component({
   selector: 'app-learning-obj',
@@ -11,8 +12,11 @@ import { LearningObject } from '../../models/learningObject.model';
 export class LearningObjComponent implements OnInit {
 
   @Input() passNum:number;
+  @Input() topicsMap:Map<number, string>;
   _topic:Topic;
-  learnObjs:LearningObject[];
+  learningObjs:LearningObject[];
+  displayedColumns: string[] = ['title', 'description', 'secondary_topic'];
+  //dataSource:MatTableDataSource<any>;
 
   constructor(private mainService: MainService) { }
 
@@ -23,7 +27,11 @@ export class LearningObjComponent implements OnInit {
   set topic(t:Topic) {
     this._topic = t;
     this.mainService.getLearningObjectsForPassAndTopic(this.passNum, this._topic.number).subscribe(data =>{
-      this.learnObjs = data;
+      this.learningObjs = data;
+      // this.dataSource = [];
+      // for (let lo of this.learningObjs) {
+      //   this.dataSource.push({})
+      // }
     });
   }
 

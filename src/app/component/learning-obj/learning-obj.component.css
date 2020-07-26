@@ -1,0 +1,15 @@
+table {
+    width: 100%;
+}
+
+.title-col, .secondary-topic-col {
+    width: 25%;
+}
+
+.description-col {
+    width: 50%;
+}
+
+.data-cell {
+    padding: 5px
+}

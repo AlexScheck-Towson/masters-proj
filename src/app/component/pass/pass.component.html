@@ -7,5 +7,5 @@
         <mat-grid-tile *ngFor="let t of topics" (click)="selectTopic(t)" 
         [ngClass]="(t === selectedTopic) ? 'selected' : ''">{{t.key_words}}</mat-grid-tile>
     </mat-grid-list>
-    <app-learning-obj *ngIf="selectedTopic !== null" [passNum]="passNum" [topic]="selectedTopic" ></app-learning-obj>
+    <app-learning-obj *ngIf="selectedTopic !== null" [passNum]="passNum" [topic]="selectedTopic" [topicsMap]="topicsMap"></app-learning-obj>
 </div>

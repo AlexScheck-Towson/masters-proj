@@ -15,6 +15,7 @@ export class PassComponent implements OnInit {
   topics:Topic[];
   selectedTopic:Topic = null;
   learningObjects:LearningObject[];
+  topicsMap = new Map<number, string>();
 
   constructor(private activatedRoute: ActivatedRoute, private mainService: MainService) {}
 
@@ -24,6 +25,9 @@ export class PassComponent implements OnInit {
       this.mainService.getTopicsForPass(this.passNum).subscribe(data => {
         this.topics = data;
         console.log(data);
+        for(let t of this.topics) {
+          this.topicsMap.set(t.number, t.key_words);
+        }
       });
     });
   }
