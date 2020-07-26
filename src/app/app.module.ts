@@ -12,6 +12,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatTableModule } from '@angular/material/table';
+import { MatSortModule } from '@angular/material/sort';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -46,7 +47,8 @@ import { ExecutingScriptDialogComponent } from './component/executing-script-dia
     MatGridListModule,
     MatDialogModule,
     MatProgressSpinnerModule,
-    MatTableModule
+    MatTableModule,
+    MatSortModule
   ],
   providers: [MainService],
   bootstrap: [AppComponent]

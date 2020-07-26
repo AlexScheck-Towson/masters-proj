@@ -3,6 +3,7 @@ mat-grid-tile  {
     color: white;
     border-radius: 10px;
     margin-top: 5px;
+    font-size: 16px;
 }
 
 mat-grid-tile:hover {
@@ -16,8 +17,4 @@ mat-grid-tile.selected {
     background-color: #a5a3a3;
     color: black;
     font-weight: 600;
-}
-
-mat-grid-tile figure {
-    padding: 0 10px;
 }

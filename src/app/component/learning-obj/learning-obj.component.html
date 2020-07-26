@@ -1,9 +1,12 @@
-<div>
-    <table mat-table [dataSource]="learningObjs" class="mat-elevation-z8">
+<div class="learning-object-container">
+    <div class="selected-topic">
+        <h1 class="accent-color">{{_topic.key_words}}</h1>
+    </div>
+    <table mat-table matSort [dataSource]="dataSource" class="mat-elevation-z8">
         <!-- Title Column-->
         <ng-container matColumnDef="title">
-            <th mat-header *matHeaderCellDef class="title-col"> Title </th>
-            <td mat-cell class="data-cell" *matCellDef="let lo"> {{lo.name}} </td>
+            <th mat-header *matHeaderCellDef mat-sort-header class="title-col"> Title </th>
+            <td mat-cell class="data-cell" *matCellDef="let lo"> {{lo.title}} </td>
         </ng-container>
 
         <!-- Description Column-->
@@ -14,8 +17,8 @@
 
         <!-- Secondary Topic Column-->
         <ng-container matColumnDef="secondary_topic">
-            <th mat-header *matHeaderCellDef class="secondary-topic-col"> Secondary Topic </th>
-            <td mat-cell class="data-cell" *matCellDef="let lo"> {{topicsMap.get(lo.secondary_topic_num)}} </td>
+            <th mat-header *matHeaderCellDef mat-sort-header class="secondary-topic-col"> Secondary Topic </th>
+            <td mat-cell class="data-cell" *matCellDef="let lo"> {{lo.secondary_topic}} </td>
         </ng-container>
 
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

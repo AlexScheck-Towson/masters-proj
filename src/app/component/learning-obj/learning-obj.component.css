@@ -1,3 +1,17 @@
+.learning-object-container {
+    margin-top: 20px;
+}
+
+.selected-topic {
+    position: sticky;
+    top: 0;
+    background-color: #fff;
+    z-index: 3;
+    padding: 10px 0;
+    box-shadow: 0 8px 6px #a5a3a3;
+    text-align: center;
+}
+
 table {
     width: 100%;
 }
