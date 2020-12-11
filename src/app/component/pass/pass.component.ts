@@ -21,6 +21,7 @@ export class PassComponent implements OnInit {
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(routeParams => {
+      this.selectedTopic = null;
       this.passNum = routeParams.passNum;
       this.mainService.getTopicsForPass(this.passNum).subscribe(data => {
         this.topics = data;
